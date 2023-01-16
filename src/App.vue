@@ -1,17 +1,14 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <h1>Welcome to Biscam Sarl...</h1>
+  <p>Prepare to get hit by awesome and interesting designs..</p>
+  <code>codingherald</code>
+  <p>coming soon...</p>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  name: "App",
+};
 </script>
 
 <style>
@@ -22,5 +19,17 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+h1 {
+  font-size: 250%;
+}
+
+p {
+  font-size: 100%;
+}
+
+code {
+  font-size: 40px;
 }
 </style>
