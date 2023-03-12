@@ -1,5 +1,11 @@
 <template>
-
+  <v-app-bar
+    :elevation="2"
+    color="teal-darken-4"
+    dark>
+    <v-btn variant="text" icon="mdi-menu"></v-btn>
+    <v-app-bar-title>Title</v-app-bar-title>
+  </v-app-bar>
   <section class="nes-container">
     <section class="message-list">
       <section class="message -left">
