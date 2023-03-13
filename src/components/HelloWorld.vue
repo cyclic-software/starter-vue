@@ -36,11 +36,15 @@
     </section>
   </section>
   <v-btn @click="test">ぼたん</v-btn>
+  <i @click="Aram()" class="nes-icon coin is-large"></i>
 </template>
 
+
 <script setup>
+
 import { ref } from 'vue'
 import { useTheme } from 'vuetify'
+import {Howl} from 'howler';
 
 const darkTheme = ref(false)
 const theme = useTheme()
@@ -51,6 +55,15 @@ const changeTheme = () => {
 
 const test = () => {
   console.log("押した")
+}
+
+const sound = new Howl({
+  src: [require('@/assets/audio/coin05.mp3')],
+});
+
+const Aram = () =>
+{
+  sound.play();
 }
 </script>
 
