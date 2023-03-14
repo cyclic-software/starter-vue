@@ -49,18 +49,17 @@
     </section>
   </section>
   <v-btn @click="test">ぼたん</v-btn>
-  <i @click="Aram()" class="nes-icon coin is-large"></i>
-  <div>
-    <p>APIキー: {{ apiKey }}</p>
-  </div>
+  <SoundPlayer></SoundPlayer>
+  <ApiTest></ApiTest>
+  <PropsTest title="こんにちは" description="Propsてすとだよ。"></PropsTest>
 </template>
 
 
 <script setup>
 
-import { computed, ref } from 'vue'
+
+import { ref } from 'vue'
 import { useTheme } from 'vuetify'
-import {Howl} from 'howler';
 
 const darkTheme = ref(false)
 const theme = useTheme()
@@ -79,19 +78,9 @@ const test = () => {
   console.log("押した")
 }
 
-const sound = new Howl({
-  src: [require('@/assets/audio/coin05.mp3')],
-});
-
-const Aram = () =>
-{
-  sound.play();
-}
-
-const apiKey = computed(() =>
-{
-  return process.env.VUE_APP_API_KEY;
-})
+import PropsTest from "@/components/PropsTest.vue";
+import ApiTest from "@/components/ApiTest.vue";
+import SoundPlayer from "@/components/SoundPlayer.vue";
 </script>
 
 
