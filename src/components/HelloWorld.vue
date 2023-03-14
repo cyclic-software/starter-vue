@@ -50,12 +50,15 @@
   </section>
   <v-btn @click="test">ぼたん</v-btn>
   <i @click="Aram()" class="nes-icon coin is-large"></i>
+  <div>
+    <p>APIキー: {{ apiKey }}</p>
+  </div>
 </template>
 
 
 <script setup>
 
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
 import { useTheme } from 'vuetify'
 import {Howl} from 'howler';
 
@@ -84,6 +87,11 @@ const Aram = () =>
 {
   sound.play();
 }
+
+const apiKey = computed(() =>
+{
+  return process.env.VUE_APP_API_KEY;
+})
 </script>
 
 
