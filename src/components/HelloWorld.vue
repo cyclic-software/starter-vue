@@ -49,7 +49,7 @@
     </section>
   </section>
   <v-btn @click="test">ぼたん</v-btn>
-  <SoundPlayer></SoundPlayer>
+  <SoundPlayer number=1></SoundPlayer>
   <ApiTest></ApiTest>
   <PropsTest title="こんにちは" description="Propsてすとだよ。"></PropsTest>
 </template>
