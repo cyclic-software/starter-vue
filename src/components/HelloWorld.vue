@@ -3,7 +3,20 @@
     :elevation="2"
     color="teal-darken-4"
     dark>
-    <v-btn variant="text" icon="mdi-menu"></v-btn>
+    <v-menu>
+      <template v-slot:activator="{ props }">
+        <v-btn variant="text" v-bind="props" icon="mdi-menu"></v-btn>
+      </template>
+      <v-list>
+        <v-list-item
+          v-for="(list, index) in menuList"
+          :key="index"
+          :value="index"
+        >
+          <v-list-item-title>{{ list.title }}</v-list-item-title>
+        </v-list-item>
+      </v-list>
+    </v-menu>
     <v-app-bar-title>HatoChan!</v-app-bar-title>
     <template v-slot:append>
       <v-switch
@@ -48,6 +61,12 @@ import {Howl} from 'howler';
 
 const darkTheme = ref(false)
 const theme = useTheme()
+const menuList = ref([
+  { title: 'niwatori' },
+  { title: 'hiyoko' },
+  { title: 'hato' },
+  { title: 'uguisu' },
+])
 
 const changeTheme = () => {
   theme.global.name.value = darkTheme.value ? 'dark' : 'light'
