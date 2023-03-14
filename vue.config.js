@@ -1,10 +1,19 @@
 const { defineConfig } = require('@vue/cli-service')
-module.exports = defineConfig({
-  transpileDependencies: true,
+const { DefinePlugin } = require('webpack')
+const dotenv = require('dotenv')
 
-  pluginOptions: {
-    vuetify: {
-			// https://github.com/vuetifyjs/vuetify-loader/tree/next/packages/vuetify-loader
-		}
-  }
+module.exports = defineConfig({
+    configureWebpack: {
+        plugins: [
+            new DefinePlugin({
+                'process.env': JSON.stringify(dotenv.config().parsed)
+            })
+        ]
+    },
+    transpileDependencies: true,
+    pluginOptions: {
+        vuetify: {
+            // https://github.com/vuetifyjs/vuetify-loader/tree/next/packages/vuetify-loader
+        }
+    }
 })
