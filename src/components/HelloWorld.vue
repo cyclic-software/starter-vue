@@ -52,6 +52,7 @@
       </section>
     </v-col>
     <v-col cols="3">
+      <img src="" alt="犬の画像">
       <ArticleList />
     </v-col>
   </v-row>
